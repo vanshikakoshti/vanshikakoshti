@@ -23,44 +23,19 @@ function Navbar() {
         <div className="navbar-logo">Vanshika</div>
 
         <div className={`nav-links ${isMobileMenuOpen ? "active" : ""}`}>
-          <a href="/" onClick={closeMenu}>
+          <a href="#home" onClick={closeMenu}>
             Home
           </a>
-          <a href="/about" onClick={closeMenu}>
+          <a href="#about" onClick={closeMenu}>
             About
           </a>
-        <a href="/about" onClick={closeMenu}>
-            Work
+          <a href="#services" onClick={closeMenu}>
+           Services
           </a>
-          <div
-            className="dropdown"
-            onMouseEnter={() =>
-              window.innerWidth > 768 && setDropdownOpen(true)
-            }
-            onMouseLeave={() =>
-              window.innerWidth > 768 && setDropdownOpen(false)
-            }
-            onClick={() => window.innerWidth <= 768 && toggleDropdown()}
-          >
-            <button className="dropbtn">
-              Services {isDropdownOpen ? <FaChevronUp /> : <FaChevronDown />}
-            </button>
-            {isDropdownOpen && (
-              <div className="dropdown-content">
-                <a href="/web" onClick={closeMenu}>
-                  Web Development
-                </a>
-                <a href="/mobile" onClick={closeMenu}>
-                  Mobile Apps
-                </a>
-                <a href="/seo" onClick={closeMenu}>
-                  SEO
-                </a>
-              </div>
-            )}
-          </div>
-
-          <a href="/contact" onClick={closeMenu}>
+        <a href="#projects" onClick={closeMenu}>
+           Projects
+          </a>
+          <a href="#contact" onClick={closeMenu}>
             Contact
           </a>
         </div>

@@ -11,12 +11,12 @@ export function MyProjects({ title, description, img, link }) {
   return (
     <div className="project-container">
       <div className="row my-4">
-        <div className="col-md-5">
+        <div className="col-md-5" data-aos="fade-up">
           <div className="project-img project-border-right">
               <img src={img} alt={title} />
           </div>
         </div>
-        <div className="col-md-7">
+        <div className="col-md-7" data-aos="fade-up">
           <div className="project-content">
             <h4>{title}</h4>
             <p>{description}</p>
@@ -38,13 +38,13 @@ export function MyProjects({ title, description, img, link }) {
 export default function Projects() {
   return (
     <>
-      <div className="section-padding ">
+      <div className="section-padding" id="projects" >
         <div className="container-fluid">
           <div className="row">
-            <div className="col-md-3">
+            <div className="col-md-3" data-aos="fade-up">
               <h5 className="sub-heading">Work</h5>
             </div>
-            <div className="col-md-8">
+            <div className="col-md-8" data-aos="fade-up">
               <h2 className="section-heading">Projects</h2>
             </div>
           </div>

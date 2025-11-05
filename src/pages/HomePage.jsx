@@ -6,6 +6,7 @@ import Footer from '../components/Footer'
 import About from '../components/About'
 import Contact from '../components/Contact'
 import Projects from '../components/Projects'
+import MyModal from '../components/MyModal'
 
 export default function HomePage() {
   return (
@@ -15,6 +16,7 @@ export default function HomePage() {
       <Services/>
       <About/>
       <Projects/>
+      {/* <MyModal/> */}
       <Contact/>
       <Footer/>
     </>

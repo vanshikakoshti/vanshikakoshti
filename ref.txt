@@ -15,3 +15,48 @@
 "Delivering Pixel-Perfect, High-Performance Web Experiences Through Modern Technologies."
 
 "Code That Scales — Modern Web Development Focused on Speed, Security & Stability."
+
+
+
+        <div className={`nav-links ${isMobileMenuOpen ? "active" : ""}`}>
+          <a href="/" onClick={closeMenu}>
+            Home
+          </a>
+          <a href="/about" onClick={closeMenu}>
+            About
+          </a>
+        <a href="/about" onClick={closeMenu}>
+            Work
+          </a>
+          <div
+            className="dropdown"
+            onMouseEnter={() =>
+              window.innerWidth > 768 && setDropdownOpen(true)
+            }
+            onMouseLeave={() =>
+              window.innerWidth > 768 && setDropdownOpen(false)
+            }
+            onClick={() => window.innerWidth <= 768 && toggleDropdown()}
+          >
+            <button className="dropbtn">
+              Services {isDropdownOpen ? <FaChevronUp /> : <FaChevronDown />}
+            </button>
+            {isDropdownOpen && (
+              <div className="dropdown-content">
+                <a href="/web" onClick={closeMenu}>
+                  Web Development
+                </a>
+                <a href="/mobile" onClick={closeMenu}>
+                  Mobile Apps
+                </a>
+                <a href="/seo" onClick={closeMenu}>
+                  SEO
+                </a>
+              </div>
+            )}
+          </div>
+
+          <a href="/contact" onClick={closeMenu}>
+            Contact
+          </a>
+        </div>

@@ -20,13 +20,13 @@ export default function Contact() {
     // You can connect API, EmailJS, etc. here
   };
   return (
-    <div className="bg-theme">
+    <div className="bg-theme" id="contact">
     <div className="contact-section">
         <div className="container-fluid">
       <div className="row">
       {/* LEFT SIDE */}
-      <div className="col-md-4">
-      <div className="contact-info">
+      <div className="col-md-4" data-aos="fade-up">
+      <div className="contact-info mb-4">
         <h2 className="contact-title">Schedule a free consultation</h2>
 
         <div className="contact-details">
@@ -57,7 +57,7 @@ export default function Contact() {
       </div>
     </div>
       {/* RIGHT SIDE */}
-      <div className="col-md-8">
+      <div className="col-md-8" data-aos="fade-up">
       <div className="contact-form">
         <h5 className="sub-heading">Contact Me</h5>
         <h2 className="form-title">Let’s build something together</h2>

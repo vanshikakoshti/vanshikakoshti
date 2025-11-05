@@ -1,12 +1,13 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
+import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
-import Slider from "react-slick";
+
 
 export function OurServices({ number, title, description }) {
   return (
 
-      <div className="service-section-item">
+      <div className="service-section-item" data-aos="fade-up">
         <div className="number">
           <span>{number}</span>
         </div>
@@ -18,50 +19,45 @@ export function OurServices({ number, title, description }) {
 }
 
 export default function Services() {
+ const [slidesToShow, setSlidesToShow] = useState(3);
+   useEffect(() => {
+    const updateSlides = () => {
+      const width = window.innerWidth;
+      if (width < 767) {
+        setSlidesToShow(1); 
+      } else if (width < 1024) {
+        setSlidesToShow(2);
+      } else {
+        setSlidesToShow(3); 
+      }
+    };
+
+    updateSlides(); 
+    window.addEventListener("resize", updateSlides);
+    return () => window.removeEventListener("resize", updateSlides);
+  }, []);
+
   const settings = {
-    dots: true,
+    dots: slidesToShow > 1, // hide dots on mobile
     infinite: true,
     speed: 500,
-    slidesToShow: 3,
     slidesToScroll: 1,
     autoplay: true,
-    responsive: [
-      {
-        breakpoint: 1024, // screens smaller than 1024px
-        settings: {
-          slidesToShow: 2,
-          slidesToScroll: 1,
-          infinite: true,
-          dots: true,
-        },
-      },
-      {
-        breakpoint: 768, // screens smaller than 768px
-        settings: {
-          slidesToShow: 2,
-          slidesToScroll: 1,
-        },
-      },
-      {
-        breakpoint: 480, // screens smaller than 480px
-        settings: {
-          slidesToShow: 1,
-          slidesToScroll: 1,
-          dots: false, // optionally hide dots on very small screens
-        },
-      },
-    ],
+    autoplaySpeed: 2000,
+    slidesToShow, // 👈 dynamically controlled
   };
+
+
   return (
     <>
-      <div className="bg-theme">
+      <div className="bg-theme" id="services">
         <div className="container-fluid">
           <div className="services-sec">
             <div className="row">
-              <div className="col-md-3">
+              <div className="col-md-3" data-aos="fade-up">
                 <h5 className="sub-heading">What i do</h5>
               </div>
-              <div className="col-md-8">
+              <div className="col-md-8" data-aos="fade-up">
                 <h2 className="section-heading">
                   Delivering Pixel-Perfect, High-Performance Web Experiences Through Modern Technologies.
                 </h2>

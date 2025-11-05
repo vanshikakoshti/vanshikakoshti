@@ -8,6 +8,7 @@ body {
   font-family: "Inter Tight", sans-serif;
   font-size: 16px;
   font-weight: 500;
+  overflow-x: hidden;
 }
 p {
   font-size: 16px;
@@ -21,12 +22,58 @@ img {
 .section-padding {
   padding: 100px 0;
 }
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
+
+/* Loader */
+.loader-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  background: black;
+  color: white;
 }
 
+.loader-text {
+  font-size: 70px;
+  font-weight: bold;
+  letter-spacing: 2px;
+  animation: fadeInOut 2s infinite ease-in-out;
+}
+
+@keyframes fadeInOut {
+  0% {
+    opacity: 0.2;
+    transform: scale(0.9);
+  }
+  50% {
+    opacity: 1;
+    transform: scale(1.05);
+    color: #fff;
+  }
+  100% {
+    opacity: 0.2;
+    transform: scale(0.9);
+  }
+}
+/* Scroll */
+.scroll-to-top {
+  position: fixed;
+  bottom: 30px;
+  right: 30px;
+  background-color: #181818;
+  color: white;
+  border: none;
+  border-radius: 14px;
+  padding: 12px;
+  font-size: 20px;
+  line-height: 20px;
+  cursor: pointer;
+  z-index: 1000;
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+  transition: all 0.3s ease-in-out;
+}
+
+/* Navbar */
 .navbar {
   background-color: #f2eeed;
   color: #000;
@@ -38,8 +85,9 @@ img {
 }
 
 .navbar-logo {
-  font-size: 24px;
+  font-size: 50px;
   font-weight: bold;
+  text-transform: uppercase;
 }
 
 .nav-links {
@@ -208,10 +256,18 @@ h4.sub-title {
   line-height: 35px;
   display: flex;
   align-items: center;
-  color: #171717;
   margin: 21px 0px 69px 0px;
   transition: all 0.3s ease-in-out;
 }
+
+.service-section-item:hover {
+  background-color: #000;
+  color: #fff;
+}
+.service-section-item:hover p {
+  color: #fff;
+}
+
 .project-counter {
   background-color: #fff;
   border-radius: 12px;
@@ -275,7 +331,6 @@ h4.sub-title {
 /* RIGHT SIDE */
 .contact-form {
   flex: 2;
-  min-width: 350px;
   background: #ffffff;
   padding: 40px 50px;
   border-radius: 10px;
@@ -352,18 +407,24 @@ textarea {
   background-color: #333;
 }
 
-.project-container{
-    border-top: 1px solid #0f0f0f1a;
+.project-container {
+  border-top: 1px solid #0f0f0f1a;
 }
-.project-img,.project-content{
-      padding: 35px 35px 35px 0px;
+.project-img,
+.project-content {
+  padding: 35px 35px 35px 0px;
+  overflow: hidden;
+}
 
-}
-.project-img img{
+.project-img img {
   border-radius: 12px;
+  transition: transform 0.5s ease;
 }
-.project-border-right{
-          border-right: 1px solid #0f0f0f1a;
+.project-img:hover img {
+  transform: scale(0.9); /* zooms out */
+}
+.project-border-right {
+  border-right: 1px solid #0f0f0f1a;
 }
 /* Responsive */
 @media (max-width: 768px) {
@@ -384,11 +445,12 @@ textarea {
   line-height: 242px;
 }
 .footer-section-link a {
-  color: #0f0f0f;
+  color: #212529;
   font-size: 18px;
   padding-right: 15px;
   font-weight: 500;
   cursor: pointer;
+  text-decoration: none;
 }
 .footer-section-link a:hover {
   color: #0f0f0f;
@@ -405,10 +467,7 @@ textarea {
   border-style: solid;
   border-style: solid;
   border-width: 0px 1px 0px 0px;
-  border-top-width: 0px;
-  border-right-width: 1px;
-  border-bottom-width: 0px;
-  border-left-width: 0px;
+
   border-color: #7a7a7a33;
   padding: 100px 0;
 }
@@ -455,11 +514,12 @@ textarea {
 @media screen and (max-width: 768px) {
   .nav-links {
     position: absolute;
-    top: 60px;
+    top: 0;
     left: 0;
     flex-direction: column;
     width: 100%;
-    background-color: #333;
+    background-color: #000;
+    color: #fff;
     display: none;
     padding: 10px 0;
     z-index: 999;
@@ -467,8 +527,14 @@ textarea {
 
   .nav-links.active {
     display: flex;
+    height: 90vh;
+    align-items: center;
+    justify-content: center;
   }
-
+  .nav-links a {
+    color: #fff;
+    font-size: 28px;
+  }
   .dropdown-content {
     position: static;
     width: 100%;
@@ -477,5 +543,36 @@ textarea {
 
   .hamburger {
     display: block;
+    z-index: 999;
+  }
+}
+@media screen and (max-width: 768px) {
+  .contact-form{
+      padding: 40px 15px;
+  }
+  .herosection-heading {
+    font-size: 62px;
+  }
+  .footer-name-heading {
+    font-size: 70px;
+  }
+
+.footer-first-section-left{
+      border-width: 0px 0px 0px 0px;
+}
+  .footer-second-section-left {
+    border-width: 1px 0px 1px 0;
+  }
+  .footer-second-section-right {
+    justify-content: left;
+    border-width: 0 0px 1px 0;
+  }
+  .footer-third-section-left {
+    border-width: 1px 0px 2px 0;
+    order: 2;
+  }
+  .footer-third-section-right {
+    justify-content: left;
+    order: 1;
   }
 }
