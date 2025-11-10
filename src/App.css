@@ -179,6 +179,7 @@ img {
   border-radius: 30px;
   text-decoration: none;
   margin-top: 10px;
+  margin-bottom: 20px;
 }
 .cust-btn {
   background-color: #000;
@@ -547,11 +548,14 @@ textarea {
   }
 }
 @media screen and (max-width: 768px) {
+  .herosection-p {
+    margin-top: 20px;
+  }
   .contact-form{
       padding: 40px 15px;
   }
   .herosection-heading {
-    font-size: 62px;
+    font-size: 42px;
   }
   .footer-name-heading {
     font-size: 70px;
@@ -576,3 +580,19 @@ textarea {
     order: 1;
   }
 }
+
+@media screen and (max-width: 1024px){
+  .footer-name-heading{
+        font-size: 60px;
+  }
+}
+@media only screen and (max-width: 380px)  {
+  .contact-item a.value {
+        font-size: 16px
+  }
+  .footer-section-link a{
+        font-size: 16px;
+  }
+}
+
+

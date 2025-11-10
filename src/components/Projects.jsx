@@ -1,9 +1,10 @@
 import React from "react";
-import digitalmarketing from "../assets/img/work/digital-marketing.png";
-import newsapp from "../assets/img/work/news-monkey.png";
-import quizeapp from "../assets/img/work/quize-app.png";
-import todo from "../assets/img/work/todo.png";
-import textutils from "../assets/img/work/textutils.png";
+import digitalmarketing from "../assets/img/work/digital-marketing.webp";
+import newsapp from "../assets/img/work/news-monkey.webp";
+import travel from "../assets/img/work/travel-with-vanshika.webp";
+import quizeapp from "../assets/img/work/quize-app.webp";
+import todo from "../assets/img/work/todo.webp";
+import textutils from "../assets/img/work/textutils.webp";
 
 
 
@@ -62,6 +63,12 @@ export default function Projects() {
                   description=" This app was built for personal use and showcases. It is not affiliated with any real news platforms."
                   img={newsapp}
                   link="https://vanshikakoshti.github.io/newsapp/"
+                />
+                <MyProjects
+                  title="Tours and Travels"
+                  description="This website was built with HTML, CSS, and JavaScript for personal use and portfolio showcasing. It is not affiliated with any real travel agencies or tour companies."
+                  img={travel}
+                  link="https://vanshikakoshti.github.io/travel-with-vanshika/"
                 />
                 <MyProjects
                   title="Quize App"

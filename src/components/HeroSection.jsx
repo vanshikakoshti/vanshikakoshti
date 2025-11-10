@@ -1,6 +1,6 @@
 import React from 'react'
-import herosectionimg1 from '../assets/img/herosection-1.png';
-import herosectionimg2 from '../assets/img/herosection-2.png';
+import herosectionimg1 from '../assets/img/herosection-1.webp';
+import herosectionimg2 from '../assets/img/herosection-2.webp';
 
 
 export default function HeroSection() {
@@ -16,7 +16,7 @@ export default function HeroSection() {
                     <div className="col-md-6" data-aos="fade-up">
                         <div className='d-flex flex-wrap align-items-center'>
                         <p className='herosection-p'>As a skilled Web Developer, I specialize in building responsive, high-performance websites that deliver seamless user experiences.</p>
-                        <a  href="#projects" className='herosection-link mb-2'>Explore Work</a></div>
+                        <a  href="#projects" className='herosection-link'>Explore Work</a></div>
                     </div>
                 </div>
             </div>

@@ -25,7 +25,7 @@ export default function Contact() {
         <div className="container-fluid">
       <div className="row">
       {/* LEFT SIDE */}
-      <div className="col-md-4" data-aos="fade-up">
+      <div className="col-lg-4 col-md-8 col-12" data-aos="fade-up">
       <div className="contact-info mb-4">
         <h2 className="contact-title">Schedule a free consultation</h2>
 
@@ -57,7 +57,7 @@ export default function Contact() {
       </div>
     </div>
       {/* RIGHT SIDE */}
-      <div className="col-md-8" data-aos="fade-up">
+      <div className="col-lg-8 col-md-12 col-12" data-aos="fade-up">
       <div className="contact-form">
         <h5 className="sub-heading">Contact Me</h5>
         <h2 className="form-title">Let’s build something together</h2>
